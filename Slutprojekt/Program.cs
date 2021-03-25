@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Slutprojekt
 {
@@ -6,7 +7,12 @@ namespace Slutprojekt
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Välkommen till Blons Tower Text Defence");
+
+            List<Monkey> monkeys = new List<Monkey>();
+
+
+            System.Console.ReadLine();
         }
     }
 }
