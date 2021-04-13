@@ -1,0 +1,13 @@
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.csprojAssemblyReference.cache
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.AssemblyInfoInputs.cache
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.AssemblyInfo.cs
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.csproj.CoreCompileInputs.cache
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\bin\Debug\netcoreapp3.1\Slutprojekt.exe
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\bin\Debug\netcoreapp3.1\Slutprojekt.deps.json
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\bin\Debug\netcoreapp3.1\Slutprojekt.runtimeconfig.json
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\bin\Debug\netcoreapp3.1\Slutprojekt.runtimeconfig.dev.json
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\bin\Debug\netcoreapp3.1\Slutprojekt.dll
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\bin\Debug\netcoreapp3.1\Slutprojekt.pdb
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.dll
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.pdb
+C:\Users\william.wolke\Documents\Programering 2\Slutprojektet\Slutprojekt\obj\Debug\netcoreapp3.1\Slutprojekt.genruntimeconfig.cache

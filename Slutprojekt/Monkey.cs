@@ -2,7 +2,7 @@ using System;
 
 namespace Slutprojekt
 {
-    public class Monkey
+    public class Monkey : Player
     {
         
     }
