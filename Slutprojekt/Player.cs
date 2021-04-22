@@ -26,7 +26,7 @@ namespace Slutprojekt
 
         public int MenuChoise(string choise)
         {
-
+            correctInput = false;
 
             while (correctInput == false)
             {
@@ -34,19 +34,22 @@ namespace Slutprojekt
 
                 if (success)
                 {
-                    if (choiseInt == 1)
-                    {
-                        monkeys.Add(new Monkey());
+                    switch(choiseInt){
+                        case 1: 
+                            monkeys.Add(new Monkey());
+                            correctInput = true;
+                            break;
+                        case 2: 
+                            monkeys.Add(new Monkey());
+                            correctInput = true;
+                            break;
+                        case 3: 
+                            monkeys.Add(new Monkey());
+                            correctInput = true;
+                            break;
                     }
-                    else if (choiseInt == 2)
-                    {
-                        monkeys.Add(new Monkey());
-                    }
-                    else if (choiseInt == 3)
-                    {
-                        monkeys.Add(new Monkey());
-                    }
-                    else if (choiseInt < 0)
+
+                    if (choiseInt < 0)
                     {
                         System.Console.WriteLine("Your number was too low");
                     }
