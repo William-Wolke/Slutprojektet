@@ -5,12 +5,14 @@ namespace Slutprojekt
     public class Round
     {
         protected int Hp;
+        protected int LeadHP {get; set;}
+        protected int CamoHP {get; set;}
         public bool Lead {get; set;}
         public bool Camo {get; set;}
         protected bool clearedRound;
         protected Random generator = new Random();
 
-        public bool PlayRound(Player player1){
+        public virtual bool PlayRound(Player player1){
             if (player1.Damage < Hp)
             {
                 player1.Health -= Hp - player1.Damage;

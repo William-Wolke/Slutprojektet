@@ -4,8 +4,8 @@ namespace Slutprojekt
 {
     public class Monkey : Player
     {
-        public Monkey(){
-
-        }
+        int Damage {get; set;}
+        int CamoDamage {get; set;}
+        int LeadDamage {get; set;}
     }
 }

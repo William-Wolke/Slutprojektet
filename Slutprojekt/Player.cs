@@ -5,8 +5,8 @@ namespace Slutprojekt
 {
     public class Player
     {
-        public int Damage { get; set; }
         public List<Monkey> monkeys = new List<Monkey>();
+        public int Damage { get; set; }
         public int LeadDamage { get; set; }
         public int CamoDamage { get; set; }
         public int Health { get; set; }
@@ -36,15 +36,15 @@ namespace Slutprojekt
                 {
                     switch(choiseInt){
                         case 1: 
-                            monkeys.Add(new Monkey());
+                            monkeys.Add(new DartMonkey());
                             correctInput = true;
                             break;
                         case 2: 
-                            monkeys.Add(new Monkey());
+                            monkeys.Add(new NinjaMonkey());
                             correctInput = true;
                             break;
                         case 3: 
-                            monkeys.Add(new Monkey());
+                            monkeys.Add(new WizardMonkey());
                             correctInput = true;
                             break;
                     }
@@ -61,6 +61,19 @@ namespace Slutprojekt
 
             }
             return choiseInt;
+        }
+
+        public void UpdateDamage(){
+            this.Damage = 0;
+            this.CamoDamage = 0;
+            this.LeadDamage = 0;
+                for (int i = 0; i < monkeys.Count; i++)
+                {
+                    this.Damage += monkeys[i].Damage;
+                    this.CamoDamage += monkeys[i].CamoDamage;
+                    this.LeadDamage += monkeys[i].LeadDamage;
+                }
+                
         }
     }
 }

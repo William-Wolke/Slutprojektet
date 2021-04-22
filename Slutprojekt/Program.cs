@@ -9,14 +9,12 @@ namespace Slutprojekt
         {
             Console.WriteLine("Välkommen till Blons Tower Text Defence");
 
-            List<Monkey> monkeys = new List<Monkey>();
-
             List<Round> rounds = new List<Round>();
 
             Player player1 = new Player();
 
             RoundGenerator roundGenerator1 = new RoundGenerator();
-            //Skapar en rundaordning
+            //Skapar en rundaordning på 100 rundor med ens roundgenerator och lägger in i listan rounds. 
             for (int i = 0; i < 100; i++)
             {
                 roundGenerator1.NewRound(i);
@@ -41,13 +39,14 @@ namespace Slutprojekt
                     rounds.Add(new Round());
                 }               
             }
-            //Gameloopen, skriver ut menyn, tar emot menyvalet och spelar rundan.
+            //Gameloopen, skriver ut menyn, tar emot menyvalet och spelar rundan. Uppdaterar också damage för jag gjorde allt på ett knasigt sätt.
             for (int i = 1; i < 101; i++)
             {
                 player1.PrintMenu(i);
                 player1.MenuChoise(Console.ReadLine());
 
-                
+                System.Console.WriteLine("Total monkeys: " + player1.monkeys.Count);
+                player1.UpdateDamage();
 
                 rounds[i-1].PlayRound(player1);
             }
