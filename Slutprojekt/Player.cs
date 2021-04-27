@@ -13,6 +13,9 @@ namespace Slutprojekt
         public int Money {get; set;}
         bool correctInput = false;
         int choiseInt;
+        public Player(){
+            this.Money = 150;
+        }
         //Void metod som bara skriver ut menyn, mums
         public void PrintMenu(int i)
         {
@@ -25,8 +28,12 @@ namespace Slutprojekt
             System.Console.WriteLine("Enter 3 to purchase Bombtower: 300£");
             System.Console.WriteLine("Enter 4 to purchase Wizarmonkey: 600£");
         }
+        //Här begås inflation
+        public void PrintMoney(){
+
+        }
         //Här har jag valt att lägga varje menyval till separata spelare. Detta gör så att om man ska implementera multiplayer i spelet så kan varje spelare ha sitt eget menyval
-        public int MenuChoise(int money)
+        public int MenuChoise()
         {
             correctInput = false;
 
@@ -37,34 +44,50 @@ namespace Slutprojekt
                 if (success)
                 {   //här är en switch med de utfall som man kan göra. och en if sats nedanför som tar upp om man inte har skrivit rätt nummer. FIck inte det att funka i switch.
                     switch(choiseInt){
+                        case 0:
+                        correctInput = true;
+                        break;
+
                         case 1: 
-                            if(money > 100){
+                            if(this.Money > 100){
                                 monkeys.Add(new DartMonkey());
                                 correctInput = true;
                                 return 100;
                             }
+                            else{
+                                System.Console.WriteLine("Not enough funds");
+                            }
                            break; 
                         case 2: 
-                            if(money > 300){
+                            if(this.Money > 300){
                                 monkeys.Add(new NinjaMonkey());
                                 correctInput = true;
                                 return 300;
                             }
+                            else{
+                                System.Console.WriteLine("Not enough funds");
+                            }
                             break;
                             
                         case 3: 
-                            if(money > 300){
+                            if(this.Money > 300){
                                 monkeys.Add(new BombTower());
                                 correctInput = true;
                                 return 300;
                             }
+                            else{
+                                System.Console.WriteLine("Not enough funds");
+                            }
                             break;
                             
                         case 4: 
-                            if(money > 300){
+                            if(this.Money > 300){
                                 monkeys.Add(new WizardMonkey());
                                 correctInput = true;
                                 return 600;
+                            }
+                            else{
+                                System.Console.WriteLine("Not enough funds");
                             }
                             break;
                             
