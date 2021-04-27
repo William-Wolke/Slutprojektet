@@ -43,10 +43,12 @@ namespace Slutprojekt
             for (int i = 1; i < 101; i++)
             {
                 player1.PrintMenu(i);
-                player1.MenuChoise(Console.ReadLine());
+                player1.Money = -player1.MenuChoise(player1.Money);
 
                 System.Console.WriteLine("Total monkeys: " + player1.monkeys.Count);
                 player1.UpdateDamage();
+
+                System.Console.WriteLine(player1.Damage + " " + player1.CamoDamage + " " + player1.LeadDamage);
 
                 rounds[i-1].PlayRound(player1);
             }
