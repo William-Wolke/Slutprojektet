@@ -11,10 +11,13 @@ namespace Slutprojekt
         public int CamoDamage { get; set; }
         public int Health { get; set; }
         public int Money {get; set;}
+
+        public bool GameOver {get; set;}
         bool correctInput = false;
         int choiseInt;
         public Player(){
             this.Money = 150;
+            this.GameOver = false;
         }
         //Void metod som bara skriver ut menyn, mums
         public void PrintMenu(int i)
@@ -23,10 +26,10 @@ namespace Slutprojekt
 
             System.Console.WriteLine("What do you want to do?");
             System.Console.WriteLine("Enter 0 for nothing");
-            System.Console.WriteLine("Enter 1 to purchase Dartmonkey: 100£");
-            System.Console.WriteLine("Enter 2 to purchase Ninjamonkey: 300£");
-            System.Console.WriteLine("Enter 3 to purchase Bombtower: 300£");
-            System.Console.WriteLine("Enter 4 to purchase Wizarmonkey: 600£");
+            System.Console.WriteLine("Enter 1 to purchase Dartmonkey: 100$");
+            System.Console.WriteLine("Enter 2 to purchase Ninjamonkey: 300$");
+            System.Console.WriteLine("Enter 3 to purchase Bombtower: 300$");
+            System.Console.WriteLine("Enter 4 to purchase Wizarmonkey: 600$");
         }
         //Här begås inflation
         public void PrintMoney(){

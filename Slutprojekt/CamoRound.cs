@@ -4,7 +4,7 @@ namespace Slutprojekt
 {
     public class CamoRound : Round
     {
-        public CamoRound(int i){
+        public CamoRound(int i): base(i){
             this.hp = 100*i;
             this.CamoHp = (100*i)/2;
         }

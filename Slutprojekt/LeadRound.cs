@@ -4,7 +4,7 @@ namespace Slutprojekt
 {
     public class LeadRound : Round
     {
-        public LeadRound(int i){
+        public LeadRound(int i): base(i){
             this.hp = 100*i;
             this.LeadHp = (100*i)/2;
         }
@@ -17,7 +17,7 @@ namespace Slutprojekt
                 System.Console.WriteLine("Du tappade " + (hp-player1.Damage) + " liv");
             }
 
-            if (player1.Health <= 0)
+            else if (player1.Health <= 0)
             {
                 clearedRound = false;
                 return clearedRound;

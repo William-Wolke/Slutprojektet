@@ -12,35 +12,31 @@ namespace Slutprojekt
             List<Round> rounds = new List<Round>();
             //Här skapas spelaren. Om man ska göra spelet till multiplayer hade det varit bra att göra en array eller lista med antalet spelare som spelar samtidigt.
             Player player1 = new Player();
+            Round roundGenerator = new Round(1);
+            int i = 1;
 
-            RoundGenerator roundGenerator1 = new RoundGenerator();
             //Skapar en rundaordning på 100 rundor med ens roundgenerator och lägger in i listan rounds. Detta borde göras i metoden
-            for (int i = 0; i < 100; i++)
+            for (int j = 0; j < 100; j++)
             {
-                roundGenerator1.NewRound(i);
-
-                if (roundGenerator1.Camo == true && roundGenerator1.Lead == true)
-                {
-                    rounds.Add(new LeadCamoRound(i));
+                int l = roundGenerator.GenerateRound(j);
+                switch (l){
+                    case 0: 
+                        rounds.Add(new Round(j));
+                        break;
+                    case 1: 
+                        rounds.Add(new CamoRound(j));
+                        break;
+                    case 2: 
+                        rounds.Add(new LeadRound(j));
+                        break;
+                    case 3: 
+                        rounds.Add(new LeadCamoRound(j));
+                        break;
                 }
-
-                else if (roundGenerator1.Camo == true && roundGenerator1.Lead == false)
-                {
-                    rounds.Add(new CamoRound(i));
-                }
-
-                else if (roundGenerator1.Camo == false && roundGenerator1.Lead == true)
-                {
-                    rounds.Add(new LeadRound(i));
-                }
-
-                else
-                {
-                    rounds.Add(new Round(i));
-                }               
             }
+
             //Gameloopen, skriver ut menyn, tar emot menyvalet och spelar rundan. Uppdaterar också damage för jag gjorde allt på ett knasigt sätt.
-            for (int i = 1; i < 101; i++)
+            while (player1.GameOver == false && i < 101)
             {
                 player1.PrintMoney();
                 player1.PrintMenu(i);
@@ -53,6 +49,8 @@ namespace Slutprojekt
 
                 rounds[i-1].PlayRound(player1);
                 player1.Money = rounds[i-1].GivePlayerMoney(i);
+                Console.Clear();
+                i++;
             }
 
             System.Console.ReadLine();
