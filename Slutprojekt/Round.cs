@@ -9,28 +9,23 @@ namespace Slutprojekt
         protected int hp;
         protected int LeadHp {get; set;}
         protected int CamoHp {get; set;}
+        protected int DamageTaken;
         public bool Lead {get; set;}
         public bool Camo {get; set;}
-        protected bool clearedRound;
         protected Random generator = new Random();
 
         public Round(int i){
             this.hp = 100*i;
         }
         //Spelar runda, virtual för att vanliga rundor ska ha mindre kod än lead och camo rundor.
-        public virtual bool PlayRound(Player player1){
+        public virtual int PlayRound(Player player1){
+            DamageTaken = 0;
             if (player1.Damage < hp)
             {
-                player1.Health -= hp - player1.Damage;
+                DamageTaken -= hp - player1.Damage;
                 System.Console.WriteLine("Du tappade " + (hp-player1.Damage) + " liv");
             }
-
-            if (player1.Health <= 0)
-            {
-                clearedRound = false;
-                return clearedRound;
-            }
-            return true;
+            return DamageTaken;
         }
         //Ger spelaren pengar, man får 1 £ för varje ballong och sedan 100 + rundans tal så rund 14 får man 114 £.
         public int GivePlayerMoney(int i){
@@ -67,6 +62,10 @@ namespace Slutprojekt
                  return 0;   
             }
         
+        }
+
+        public void PrintRoundDamage(){
+            System.Console.WriteLine("Normal bloons: " + this.hp + " Camo bloons: " + this.CamoHp + " Lead bloons: " + this.LeadHp);
         }
     }
 }

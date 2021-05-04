@@ -18,6 +18,7 @@ namespace Slutprojekt
         public Player(){
             this.Money = 150;
             this.GameOver = false;
+            this.Health = 200;
         }
         //Void metod som bara skriver ut menyn, mums
         public void PrintMenu(int i)
@@ -124,6 +125,10 @@ namespace Slutprojekt
                     this.LeadDamage += monkeys[i].LeadDamage;
                 }
                 
+        }
+
+        public void PrintPlayerDamage(){
+            System.Console.WriteLine("Normal damage: " + this.Damage + " Camo damage: " + this.CamoDamage + " LeadDamage: " + this.LeadDamage);
         }
     }
 }

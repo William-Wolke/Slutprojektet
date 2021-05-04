@@ -9,20 +9,25 @@ namespace Slutprojekt
             this.CamoHp = (100*i)/2;
             this.LeadHp = (100*i)/2;
         }
-        public override bool PlayRound(Player player1)
+        public override int PlayRound(Player player1)
         {
+            DamageTaken = 0;
             if (player1.Damage < hp)
             {
-                player1.Health -= hp - player1.Damage;
+                DamageTaken -= hp - player1.Damage;
                 System.Console.WriteLine("Du tappade " + (hp-player1.Damage) + " liv");
             }
-
-            if (player1.Health <= 0)
+            if (player1.CamoDamage < CamoHp)
             {
-                clearedRound = false;
-                return clearedRound;
+                DamageTaken -= hp - player1.Damage;
+                System.Console.WriteLine("Du tappade " + (hp-player1.Damage) + " liv");
             }
-            return true;
+            if (player1.LeadDamage < LeadHp)
+            {
+                DamageTaken -= hp - player1.LeadDamage;
+                System.Console.WriteLine("Du tappade " + (hp-player1.Damage) + " liv");
+            }
+            return DamageTaken;
         }
         
     }

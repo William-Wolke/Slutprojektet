@@ -36,18 +36,22 @@ namespace Slutprojekt
             }
 
             //Gameloopen, skriver ut menyn, tar emot menyvalet och spelar rundan. Uppdaterar också damage för jag gjorde allt på ett knasigt sätt.
-            while (player1.GameOver == false && i < 101)
+            while (player1.Health > 0 && i < rounds.Count)
             {
                 player1.PrintMoney();
                 player1.PrintMenu(i);
+
+                System.Console.WriteLine();
+                rounds[i-1].PrintRoundDamage();
+                player1.PrintPlayerDamage();
+
                 player1.Money = -player1.MenuChoise();
 
                 System.Console.WriteLine("Total monkeys: " + player1.monkeys.Count);
                 player1.UpdateDamage();
 
-                System.Console.WriteLine(player1.Damage + " " + player1.CamoDamage + " " + player1.LeadDamage);
-
-                rounds[i-1].PlayRound(player1);
+                player1.Health += rounds[i-1].PlayRound(player1);
+                
                 player1.Money = rounds[i-1].GivePlayerMoney(i);
                 Console.Clear();
                 i++;
