@@ -2,7 +2,7 @@ using System;
 
 namespace Slutprojekt
 {
-    public class BombTower : Monkey
+    public class BombTower : DartMonkey
     {
         public BombTower(){
             this.Damage = 100;

@@ -2,7 +2,7 @@ using System;
 
 namespace Slutprojekt
 {
-    public class WizardMonkey : Monkey
+    public class WizardMonkey : DartMonkey
     {
         public WizardMonkey(){
             this.Damage = 100;

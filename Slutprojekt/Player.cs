@@ -5,6 +5,7 @@ namespace Slutprojekt
 {
     public class Player
     {
+        //varje player har en lista med sina egna apor, ifall man skapar en muliplayer så kommer det överlätta att skilja vilka apor som tillhör vem.
         public List<Monkey> monkeys = new List<Monkey>();
         public int Damage { get; set; }
         public int LeadDamage { get; set; }
