@@ -1,4 +1,5 @@
-﻿using System;
+﻿using System.Data.Common;
+using System;
 using System.Collections.Generic;
 
 namespace Slutprojekt
@@ -10,11 +11,12 @@ namespace Slutprojekt
             Console.WriteLine("Välkommen till Blons Tower Text Defence");
 
             List<Round> rounds = new List<Round>();
+            List<Player> player1Monkeys = new List<Player>(); 
             //Här skapas spelaren. Om man ska göra spelet till multiplayer hade det varit bra att göra en array eller lista med antalet spelare som spelar samtidigt.
             Player player1 = new Player();
             Round roundGenerator = new Round(1);
             int i = 1;
-
+            player1Monkeys.Add(new Monkey());
             //Skapar en rundaordning på 100 rundor med ens roundgenerator och lägger in i listan rounds.
             for (int j = 0; j < 100; j++)
             {
@@ -46,8 +48,8 @@ namespace Slutprojekt
                 //Tar in användarinput
                 player1.Money = -player1.MenuChoise();
                 //Skriver ut hur många apor man har efter att man kanske köpt en.
-                System.Console.WriteLine("Total monkeys: " + player1.monkeys.Count);
-                player1.UpdateDamage();
+                System.Console.WriteLine("Total monkeys: " + player1Monkeys.Count);
+                player1Monkeys = player1.UpdateDamage(player1Monkeys);
                 //Kollar ifall man klarat rundan och ger damage om man inte smällde alla bloons
                 player1.Health += rounds[i-1].PlayRound(player1);
                 //Ger spelaren pengar
@@ -58,5 +60,7 @@ namespace Slutprojekt
 
             System.Console.ReadLine();
         }
+
+        
     }
 }
