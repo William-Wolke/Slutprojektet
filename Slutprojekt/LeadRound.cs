@@ -9,6 +9,7 @@ namespace Slutprojekt
             this.leadHp = (100*i)/2;
         }
 
+        
         public override int PlayRound(Player player1)
         {
             damageTaken = 0;

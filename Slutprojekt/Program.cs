@@ -15,7 +15,7 @@ namespace Slutprojekt
             Round roundGenerator = new Round(1);
             int i = 1;
 
-            //Skapar en rundaordning på 100 rundor med ens roundgenerator och lägger in i listan rounds. Detta borde göras i metoden
+            //Skapar en rundaordning på 100 rundor med ens roundgenerator och lägger in i listan rounds.
             for (int j = 0; j < 100; j++)
             {
                 int l = roundGenerator.GenerateRound(j);
@@ -38,20 +38,19 @@ namespace Slutprojekt
             //Gameloopen, skriver ut menyn, tar emot menyvalet och spelar rundan. Uppdaterar också damage för jag gjorde allt på ett knasigt sätt.
             while (player1.Health > 0 && i < rounds.Count)
             {
-                player1.PrintMoney();
+                //Dessa skriver ut information till användaren
                 player1.PrintMenu(i);
-
                 System.Console.WriteLine();
                 rounds[i-1].PrintRoundDamage();
                 player1.PrintPlayerDamage();
-
+                //Tar in användarinput
                 player1.Money = -player1.MenuChoise();
-
+                //Skriver ut hur många apor man har efter att man kanske köpt en.
                 System.Console.WriteLine("Total monkeys: " + player1.monkeys.Count);
                 player1.UpdateDamage();
-
+                //Kollar ifall man klarat rundan och ger damage om man inte smällde alla bloons
                 player1.Health += rounds[i-1].PlayRound(player1);
-                
+                //Ger spelaren pengar
                 player1.Money = rounds[i-1].GivePlayerMoney(i);
                 Console.Clear();
                 i++;

@@ -26,17 +26,14 @@ namespace Slutprojekt
         {
             System.Console.WriteLine("Round " + i);
 
-            System.Console.WriteLine("What do you want to do?");
+            System.Console.WriteLine("What do you want to do? You have " + this.Money + " money");
             System.Console.WriteLine("Enter 0 for nothing");
             System.Console.WriteLine("Enter 1 to purchase Dartmonkey: 100$");
             System.Console.WriteLine("Enter 2 to purchase Ninjamonkey: 300$");
             System.Console.WriteLine("Enter 3 to purchase Bombtower: 300$");
             System.Console.WriteLine("Enter 4 to purchase Wizarmonkey: 600$");
         }
-        //Här begås inflation
-        public void PrintMoney(){
 
-        }
         //Här har jag valt att lägga varje menyval till separata spelare. Detta gör så att om man ska implementera multiplayer i spelet så kan varje spelare ha sitt eget menyval
         public int MenuChoise()
         {

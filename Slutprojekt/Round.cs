@@ -17,7 +17,7 @@ namespace Slutprojekt
         public Round(int i){
             this.hp = 100*i;
         }
-        //Spelar runda, virtual för att vanliga rundor ska ha mindre kod än lead och camo rundor.
+        //Spelar denna runda, virtual för att vanliga rundor ska ha mindre kod än lead och camo rundor enklare att köra
         public virtual int PlayRound(Player player1){
             damageTaken = 0;
             if (player1.Damage < hp)
@@ -32,7 +32,7 @@ namespace Slutprojekt
             return (this.hp + this.camoHp + this.leadHp + 100+i);
         }
         public int GenerateRound(int round){
-
+            //slumpar om det blir en camo eller lead runda.
             if (generator.Next(2) == 1)
             {
                 camo = generator.Next(100) <= round;
@@ -41,7 +41,7 @@ namespace Slutprojekt
             {
                 lead = generator.Next(100) <= round;
             }
-
+            //kollar vilken typ av runda det blev, vänta dessa kan man bara ha i if-satsen ovan!
             if (this.camo == true && this.lead == true)
             {
                 return 3;    
@@ -63,7 +63,7 @@ namespace Slutprojekt
             }
         
         }
-
+        //Skriver ut data till användaren.
         public void PrintRoundDamage(){
             System.Console.WriteLine("Normal bloons: " + this.hp + " Camo bloons: " + this.camoHp + " Lead bloons: " + this.leadHp);
         }
