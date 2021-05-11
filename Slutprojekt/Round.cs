@@ -20,6 +20,7 @@ namespace Slutprojekt
         //Spelar denna runda, virtual för att vanliga rundor ska ha mindre kod än lead och camo rundor enklare att köra
         public virtual int PlayRound(Player player1){
             damageTaken = 0;
+            //Kollar ifall rundans hp är större eller mindre än spelarens damage
             if (player1.Damage < hp)
             {
                 damageTaken -= hp - player1.Damage;
@@ -27,7 +28,7 @@ namespace Slutprojekt
             }
             return damageTaken;
         }
-        //Ger spelaren pengar, man får 1 £ för varje ballong och sedan 100 + rundans tal så rund 14 får man 114 £.
+        //Ger spelaren pengar, man får 1 £ för varje ballong och sedan 100 + rundans tal så rund 14 får man 114 £ från att klara rundan.
         public int GivePlayerMoney(int i){
             return (this.hp + this.camoHp + this.leadHp + 100+i);
         }

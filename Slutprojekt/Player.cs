@@ -5,7 +5,7 @@ namespace Slutprojekt
 {
     public class Player
     {
-        //varje player har en lista med sina egna apor, ifall man skapar en muliplayer så kommer det överlätta att skilja vilka apor som tillhör vem.
+        //varje player har en lista med sina egna apor, ifall man skapar en muliplayer så kommer det överlätta att skilja vilka apor som tillhör vem. Däremot vore det nog bättre att organisera dessa i program.cs för att ha alla instanser på samma ställe.
         public List<Monkey> monkeys = new List<Monkey>();
         public int Damage { get; set; }
         public int LeadDamage { get; set; }
@@ -16,6 +16,7 @@ namespace Slutprojekt
         public bool GameOver {get; set;}
         bool correctInput = false;
         int choiseInt;
+        //Instansierar en ny spelare och ger den de viktiga värdena
         public Player(){
             this.Money = 150;
             this.GameOver = false;
@@ -94,7 +95,7 @@ namespace Slutprojekt
                             break;
                             
                     }
-
+                    //De här två kunde jag inte kontrollera med en switch så de görs med ifs
                     if (choiseInt < 0)
                     {
                         System.Console.WriteLine("Your number was too low");
@@ -124,7 +125,7 @@ namespace Slutprojekt
                 }
                 
         }
-
+        //Skriver ut information till användaren.
         public void PrintPlayerDamage(){
             System.Console.WriteLine("Normal damage: " + this.Damage + " Camo damage: " + this.CamoDamage + " LeadDamage: " + this.LeadDamage);
         }
